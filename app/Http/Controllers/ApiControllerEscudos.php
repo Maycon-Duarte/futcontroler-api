@@ -36,7 +36,8 @@ class ApiControllerEscudos extends Controller
                     $escudo->img = $bannerName;
                     $escudo->save();
                     return response()->json([
-                        "message" => "records updated successfully"
+                        "message" => "records updated successfully",
+                        "file" => $bannerName
                     ], 200);
                 } else {
                     return response()->json([
