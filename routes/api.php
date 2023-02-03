@@ -31,7 +31,7 @@ Route::prefix('auth')->group(function () {
 
 Route::get('campeonatos', [ApiControllerCampeonatos::class, 'getAll'])->middleware(['auth:sanctum', 'ability:api:read']);
 Route::get('campeonatos/{id}', [ApiControllerCampeonatos::class, 'get'])->middleware(['auth:sanctum', 'ability:api:read']);
-Route::get('campeonatos/atu', [ApiControllerCampeonatos::class, 'getAllAtu'])->middleware(['auth:sanctum', 'ability:api:read']);
+Route::get('atu/campeonatos', [ApiControllerCampeonatos::class, 'getAllAtu'])->middleware(['auth:sanctum', 'ability:api:read']);
 Route::post('campeonatos/reset/{id}', [ApiControllerCampeonatos::class, 'reset'])->middleware(['auth:sanctum', 'ability:api:write']);
 Route::post('campeonatos', [ApiControllerCampeonatos::class, 'create'])->middleware(['auth:sanctum', 'ability:api:write']);
 Route::put('campeonatos/{id}', [ApiControllerCampeonatos::class, 'update'])->middleware(['auth:sanctum', 'ability:api:write']);
