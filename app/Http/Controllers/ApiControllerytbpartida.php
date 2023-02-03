@@ -50,6 +50,7 @@ class ApiControllerytbpartida extends Controller
         } else {
             $ytbpartida = new ytbpartida;
             $ytbpartida->usuario = $request->usuario;
+            $ytbpartida->ytb_id = $request->ytb_id;
             $ytbpartida->partida_id = $request->partida_id;
             $ytbpartida->tags = $request->tags;
             $ytbpartida->radio = $request->radio;
