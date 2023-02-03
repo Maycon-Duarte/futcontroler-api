@@ -27,7 +27,7 @@ class ApiControllerytbpartida extends Controller
     public function create(Request $request)
     {
         if (ytbpartida::where('ytb_id', $request->ytb_id)->exists()) {
-            $ytbpartida = ytbpartida::where('ytb_id', $request->ytb_id);
+            $ytbpartida = ytbpartida::firstWhere('ytb_id', $request->ytb_id);
             $ytbpartida->partida_id = is_null($request->partida_id) ? $ytbpartida->partida_id : $request->partida_id;
             $ytbpartida->tags = is_null($request->tags) ? $ytbpartida->partida_id : $request->tags;
             $ytbpartida->radio = is_null($request->radio) ? $ytbpartida->partida_id : $request->radio;
