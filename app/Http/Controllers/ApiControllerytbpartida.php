@@ -35,6 +35,9 @@ class ApiControllerytbpartida extends Controller
             $ytbpartida->data = is_null($request->data) ? $ytbpartida->data : $request->data;
             $ytbpartida->hora_inicio = is_null($request->hora_inicio) ? $ytbpartida->hora_inicio : $request->hora_inicio;
             $ytbpartida->save();
+            return response()->json([
+                "message" => "ytbpartida record created",
+            ], 201);
         } else {
             $ytbpartida = new ytbpartida;
             $ytbpartida->usuario = $request->usuario;
