@@ -47,7 +47,6 @@ Route::get('partidas', [ApiControllerPartidas::class, 'getAll'])->middleware(['a
 Route::get('partidas/{token}', [ApiControllerPartidas::class, 'get'])->middleware(['auth:sanctum', 'ability:api:read']);
 
 Route::post('ytbpartidas', [ApiControllerytbpartida::class, 'create'])->middleware(['auth:sanctum', 'ability:api:read']);
-Route::put('ytbpartidas/{ytb_id}', [ApiControllerytbpartida::class, 'update'])->middleware(['auth:sanctum', 'ability:api:read']);
 Route::get('ytbpartidas', [ApiControllerytbpartida::class, 'getAll'])->middleware(['auth:sanctum', 'ability:api:read']);
 Route::get('ytbpartidas/{ytb_id}', [ApiControllerytbpartida::class, 'get'])->middleware(['auth:sanctum', 'ability:api:read']);
 
